@@ -146,3 +146,89 @@ footer {
     color: #7a7a7a;
     font-size: 0.9rem;
 }
+
+/* Sección Sobre mí */
+.sobre-mi {
+    padding: 6rem 0;
+}
+
+.sobre-mi .intro {
+    font-size: 1.3rem;
+    color: #FBFBFB;
+    font-weight: 500;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Sección Logros */
+.logros {
+    padding: 5rem 0;
+}
+
+.logros ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    list-style: none;
+}
+
+.logros li {
+    text-align: center;
+    padding: 2rem;
+}
+
+.logros li strong {
+    display: block;
+    font-size: 3rem;
+    color: #5A1A1A;
+}
+
+.logros li span {
+    display: block;
+    color: #7a7a7a;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+/* Servicios */
+.servicios {
+    padding: 6rem 0;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3rem;
+}
+
+.servicio-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Skills */
+.skills {
+    padding: 6rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.skill-category {
+    padding: 2rem;
+    text-align: center;
+}
+
+.skill-category h3 {
+    color: #FBFBFB;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category p {
+    color: #7a7a7a;
+    font-size: 0.95rem;
+}

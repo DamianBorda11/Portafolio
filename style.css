@@ -232,3 +232,42 @@ footer {
     color: #7a7a7a;
     font-size: 0.95rem;
 }
+
+/* portafolio */
+
+.portafolio {
+    padding: 2rem;
+}
+
+.portfolio-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item img {
+    width: 80%;
+    height: auto;
+}
+
+/*foooter*/
+
+footer {
+    padding: 1rem;
+    background-color: #0D0D0D;
+    text-align: center;
+    color: #7a7a7a;
+    font-size: 0.9rem;
+}

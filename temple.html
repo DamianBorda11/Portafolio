@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span>D.B.</span>
+        </div>
+        <nav>
+            <a href="index.html">Sobre mí</a>
+            <a href="aboutme.html">Servicios</a>
+            <a href="temple.html">Portafolio</a>
+        </nav>
+        <div class="hablar">
+            <a href="#contact" class="btn-contact">Contactame</a>
+        </div>
+    </header>
   
     <!-- Portafolio -->
         <section class="portafolio" id="portfolio">
@@ -33,5 +48,17 @@
           <br>
           Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para activar el enlace del nav
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+          }
+        });
+    </script>
   
 </html>

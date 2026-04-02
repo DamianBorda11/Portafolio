@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +19,7 @@
             <a href="temple.html">Portafolio</a>
         </nav>
         <div class="hablar">
-            <a href="#contact" class="btn-contact">Hablemos</a>
+            <a href="#contact" class="btn-contact">Contactame</a>
         </div>
     </header>
 
@@ -41,29 +30,62 @@
                 <img src="https://i.pinimg.com/736x/7b/9e/9e/7b9e9ee6adc5bd8f4c5eda8395cf931c.jpg" alt="yo">
             </div>
             <div class="home-content">
-                <h1>Soy <span>Damián Borda</span></h1>
-                <p class="text">
-                    Creador visual y narrador digital. 
-                    <br>
-                    Construyo universos, no piezas vacías.
-                </p>
+                <h1>Hola, soy <span class="red">Damián</span></h1>
+                <h2>Soy <span id="typing"></span></h2>
                 <div class="buttons">
-                    <a href="#contact" class="btn principal">Contratame</a>
-                    <a href="#portfolio" class="btn secundario">Ver Portafolio</a>
+                    <a href="temple.html" class="btn principal">Portafolio</a>
                 </div>
             </div>
       </section>
       
-</body>
-      
-  <footer>
+      <footer>
         <p>&copy; 2026 Damián Borda
           <br>
           Todos los derechos reservados.</p>
-    </footer>
-  
-</html>
-    
-  </body>
+      </footer>
+      
+      <script>
+        // Script para activar el enlace del nav
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+          }
+        });
+
+        // Script para la animación de escritura
+        const texts = ["programador IU/UX", "diseñador grafico", "editor"];
+        let index = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing');
+
+        function typeWriter() {
+          const currentText = texts[index];
+          if (isDeleting) {
+            typingElement.textContent = currentText.substring(0, charIndex--);
+            if (charIndex < 0) {
+              isDeleting = false;
+              index = (index + 1) % texts.length;
+              setTimeout(typeWriter, 500);
+            } else {
+              setTimeout(typeWriter, 100);
+            }
+          } else {
+            typingElement.textContent = currentText.substring(0, charIndex++);
+            if (charIndex > currentText.length) {
+              isDeleting = true;
+              setTimeout(typeWriter, 2000);
+            } else {
+              setTimeout(typeWriter, 100);
+            }
+          }
+        }
+        typeWriter();
+      </script>
+      
+</body>
   
 </html>

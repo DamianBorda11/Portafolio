@@ -333,6 +333,80 @@ footer {
     height: auto;
 }
 
+.contact-section {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #141414;
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.contact-image img {
+    width: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.form-box {
+    background-color: #0B0B0B;
+    border: 1px solid #222;
+    border-radius: 15px;
+    padding: 1.8rem;
+    flex-grow: 1;
+}
+
+.form-box h2 {
+    margin-bottom: 1.2rem;
+    color: #FBFBFB;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #FBFBFB;
+    padding: 0.8rem;
+}
+
+.input-box input[type="submit"] {
+    background: red;
+    color: #0B0B0B;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.input-box input[type="submit"]:hover {
+    transform: scale(1.02);
+}
+
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #FBFBFB;
+    font-size: 1.2rem;
+}
+
 /*foooter*/
 
 footer {

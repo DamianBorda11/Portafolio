@@ -6,7 +6,7 @@
    <title>Servicios</title>
    <link rel="stylesheet" href="./style.css">
  </head>
- <body>
+ <body class="gothic">
    <!-- navbar -->
     <header class="navbar">
         <div class="logo">
@@ -22,19 +22,23 @@
         </div>
     </header>
 
-   <!-- Sobre mi -->
-        <section class="sobre-mi" id="about">
-            <div class="container">
-                <h2>Sobre mí</h2>
-                <p class="intro">
-                    Soy Damián Borda, creador visual y narrador digital. Trabajo donde el diseño, la identidad y el concepto se cruzan con lo estético, lo simbólico y lo emocional. No creo piezas vacías: construyo universos.
-                    Mi enfoque mezcla arte, diseño y narrativa. Cada proyecto es una extensión de una idea profunda: comunicar no solo lo que haces, sino quién eres.
-                </p>
+        <!-- Hero gótico -->
+        <section class="gothic-hero">
+            <div class="hero-grid centered-hero">
+                <div class="hero-copy">
+                    <span class="eyebrow">SERVICIOS</span>
+                    <h1>Diseños góticos con presencia y profundidad</h1>
+                    <p>Servicio de branding y dirección visual con atmósfera oscura, tipografía fuerte y una estética roja que transmite carácter.</p>
+                    <div class="scroll-hint red-scroll">
+                        <span>desliza para explorar</span>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Estadísticas -->
-        <section class="logros">
+        <section class="logros cyber-stats">
             <div class="container">
                 <ul>
                     <li>
@@ -57,25 +61,37 @@
         <section class="servicios" id="services">
             <div class="container">
                 <h2>Servicios</h2>
-                <div class="servicios-grid">
-                    <div class="servicio-card">
-                        <h3>Identidad visual y branding</h3>
-                    </div>
-                    <div class="servicio-card">
-                        <h3>Diseño gráfico y editorial</h3>
-                    </div>
-                    <div class="servicio-card">
+                <div class="services-mosaic">
+                    <article class="mosaic-card mosaic-large red-card">
+                        <span class="mosaic-label">01</span>
+                        <h3>Identidad visual</h3>
+                        <p>Marcas con voz propia, geometría fuerte y ritmo oscuro.</p>
+                    </article>
+                    <article class="mosaic-card mosaic-medium black-card">
+                        <span class="mosaic-label">02</span>
+                        <h3>Branding</h3>
+                        <p>Construcción de identidad con simbolismo moderno y presencia.</p>
+                    </article>
+                    <article class="mosaic-card mosaic-tall red-card">
+                        <span class="mosaic-label">03</span>
+                        <h3>UI/UX conceptual</h3>
+                        <p>Experiencias limpias, sobrias y con tensión visual.</p>
+                    </article>
+                    <article class="mosaic-card mosaic-small black-card">
+                        <span class="mosaic-label">04</span>
+                        <h3>Editorial</h3>
+                        <p>Dirección tipográfica con actitud.</p>
+                    </article>
+                    <article class="mosaic-card mosaic-medium red-card">
+                        <span class="mosaic-label">05</span>
                         <h3>Dirección de arte</h3>
-                    </div>
-                    <div class="servicio-card">
-                        <h3>Diseño para redes y contenido digital</h3>
-                    </div>
-                    <div class="servicio-card">
-                        <h3>Desarrollo conceptual de proyectos creativos</h3>
-                    </div>
-                    <div class="servicio-card">
-                        <h3>Diseño web (UI conceptual) y frontend</h3>
-                    </div>
+                        <p>Conceptos que articulan imagen, texto y emoción.</p>
+                    </article>
+                    <article class="mosaic-card mosaic-small black-card">
+                        <span class="mosaic-label">06</span>
+                        <h3>Contenido digital</h3>
+                        <p>Posts y piezas visuales con impacto inmediato.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -86,39 +102,41 @@
                 <h2>Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>Diseño visual</h3>
+                        <div class="skill-header"><h3>Diseño visual</h3><span>92%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
                     </div>
                     <div class="skill-category">
-                        <h3>Dirección de arte</h3>
+                        <div class="skill-header"><h3>Dirección de arte</h3><span>88%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
                     </div>
                     <div class="skill-category">
-                        <h3>Illustrator</h3>
+                        <div class="skill-header"><h3>Illustrator</h3><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
                     </div>
                     <div class="skill-category">
-                        <h3>Filmora</h3>
+                        <div class="skill-header"><h3>Filmora</h3><span>75%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
                     </div>
                 </div>
             </div>
         </section>
-   
-</body>
-   
-    <footer>
-        <p>&copy; 2026 Damián Borda 
-          <br>
-          Todos los derechos reservados.</p>
-    </footer>
 
-    <script>
-        // Script para activar el enlace del nav
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
-          }
-        });
-    </script>
-   
+        <footer>
+            <p>&copy; 2026 Damián Borda
+              <br>
+              Todos los derechos reservados.</p>
+        </footer>
+
+        <script>
+            // Script para activar el enlace del nav
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+              const href = link.getAttribute('href');
+              if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                link.classList.add('active');
+              }
+            });
+        </script>
+   </body>
 </html>

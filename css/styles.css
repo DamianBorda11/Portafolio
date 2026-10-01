@@ -142,61 +142,6 @@ body::after {
   margin-bottom: 6px;
 }
 
-/* ---------- Channel switch static (created by js/main.js) ---------- */
-.channel-static {
-  position: fixed;
-  inset: 0;
-  z-index: 950;
-  pointer-events: none;
-  opacity: 0;
-  background:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='1' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>"),
-    #1a1a1a;
-}
-
-/* Bright band that rolls down the screen, like a TV losing vertical sync */
-.channel-static::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 18%;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-}
-
-.channel-static.is-on {
-  animation: static-flash 0.35s steps(5) forwards;
-}
-
-.channel-static.is-on::after {
-  animation: static-roll 0.35s linear forwards;
-}
-
-@keyframes static-flash {
-  0% { opacity: 0.85; background-position: 0 0, 0 0; }
-  40% { opacity: 0.7; background-position: 40px -60px, 0 0; }
-  80% { opacity: 0.35; background-position: -30px 80px, 0 0; }
-  100% { opacity: 0; background-position: 0 0, 0 0; }
-}
-
-@keyframes static-roll {
-  from { top: -20%; }
-  to { top: 100%; }
-}
-
-/* The page itself jumps a little while the channel changes */
-.is-switching main {
-  animation: vertical-jump 0.35s steps(4);
-}
-
-@keyframes vertical-jump {
-  0% { transform: translateY(0); }
-  25% { transform: translateY(-8px); }
-  50% { transform: translateY(5px); }
-  75% { transform: translateY(-2px); }
-  100% { transform: translateY(0); }
-}
-
 /* ---------- Accessibility helpers ---------- */
 .sr-only {
   position: absolute;

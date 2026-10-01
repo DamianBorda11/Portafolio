@@ -169,10 +169,10 @@ function initLightbox() {
   });
 }
 
-// ---------- TV channels: OSD + static between sections ----------
+// ---------- TV channels: on-screen display (OSD) ----------
 // Every <section data-channel="02" data-channel-name="Cine"> is a channel.
-// When a new one reaches the middle of the screen, the OSD changes and a
-// short burst of static plays, like changing channels on an old TV.
+// When a new one reaches the middle of the screen, the OSD in the corner
+// shows its number and name, like the channel display of an old TV.
 
 function formatTapeTime(totalSeconds) {
   const pad = (n) => String(n).padStart(2, "0");
@@ -186,9 +186,7 @@ function initChannels() {
   const sections = document.querySelectorAll("[data-channel]");
   if (!sections.length) return;
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // OSD and static layer are created here, so the HTML of each page stays clean
+  // The OSD is created here, so the HTML of each page stays clean
   const osd = document.createElement("div");
   osd.className = "osd";
   osd.setAttribute("aria-hidden", "true"); // decorative: screen readers skip it
@@ -197,35 +195,15 @@ function initChannels() {
     <span class="osd__channel"></span>
     <span class="osd__name"></span>
     <span class="osd__time">${formatTapeTime(0)}</span>`;
-
-  const staticLayer = document.createElement("div");
-  staticLayer.className = "channel-static";
-  staticLayer.setAttribute("aria-hidden", "true");
-
-  document.body.append(osd, staticLayer);
+  document.body.append(osd);
 
   const channelEl = osd.querySelector(".osd__channel");
   const nameEl = osd.querySelector(".osd__name");
   const timeEl = osd.querySelector(".osd__time");
 
-  const playStatic = () => {
-    // To replay a CSS animation: remove the class, force the browser to
-    // recalculate styles (reading offsetWidth does that), then add it back.
-    staticLayer.classList.remove("is-on");
-    document.body.classList.remove("is-switching");
-    void staticLayer.offsetWidth;
-    staticLayer.classList.add("is-on");
-    document.body.classList.add("is-switching");
-  };
-
-  let currentSection = null;
-
   const switchTo = (section) => {
-    if (section === currentSection) return;
-    currentSection = section;
     channelEl.textContent = `CH ${section.dataset.channel}`;
     nameEl.textContent = section.dataset.channelName;
-    if (!reduceMotion) playStatic();
   };
 
   // rootMargin shrinks the "viewport" to a thin band in the middle of the
